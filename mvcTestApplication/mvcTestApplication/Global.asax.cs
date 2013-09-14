@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.Http;
@@ -23,6 +25,17 @@ namespace mvcTestApplication
 			RouteConfig.RegisterRoutes(RouteTable.Routes);
 			BundleConfig.RegisterBundles(BundleTable.Bundles);
 			AuthConfig.RegisterAuth();
+
+			//var uriString = ConfigurationManager.AppSettings["SQLSERVER_URI"];
+			//var uri = new Uri(uriString);
+			//var connectionString = new SqlConnectionStringBuilder
+			//{
+			//	DataSource = uri.Host,
+			//	InitialCatalog = uri.AbsolutePath.Trim('/'),
+			//	UserID = uri.UserInfo.Split(':').First(),
+			//	Password = uri.UserInfo.Split(':').Last(),
+			//}.ConnectionString;
+
 		}
 	}
 }
